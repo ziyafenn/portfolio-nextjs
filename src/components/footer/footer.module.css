@@ -1,0 +1,23 @@
+.footer {
+  display: flex;
+  padding: 2rem;
+  flex-direction: column;
+}
+.footer > div {
+  justify-content: space-between;
+  border-top: 1px solid hsl(242, 50%, 50%);
+  padding-top: 2rem;
+}
+
+.social {
+  align-items: center;
+  justify-content: center;
+}
+
+.social > img {
+  width: 1.5rem;
+}
+
+.social :nth-last-child(n + 2) {
+  margin-right: 1.5rem;
+}

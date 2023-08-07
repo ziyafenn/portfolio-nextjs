@@ -1,0 +1,35 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 2rem 0 2rem;
+  align-items: center;
+  z-index: 2;
+  position: relative;
+}
+
+.header div {
+  /* background-color: black; */
+  border: 2px solid var(--dark);
+  box-shadow: -3px 3px 0px 0px var(--dark);
+  padding: 0.5rem;
+  font-weight: 700;
+  font-size: 1.25rem;
+  user-select: none;
+  cursor: pointer;
+}
+
+.header div:hover {
+  box-shadow: -4px 4px 0px 0px var(--dark);
+  background-color: white;
+  transform: translateY(-3px);
+}
+
+.logo a {
+  all: unset;
+}
+
+@media screen and (max-width: 340px) {
+  .logo a {
+    display: none;
+  }
+}
