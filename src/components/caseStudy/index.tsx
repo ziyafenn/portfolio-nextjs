@@ -1,8 +1,11 @@
 import { Post } from "@/helpers/types";
-import styles from "./CaseStudy.module.css";
+import styles from "./caseStudy.module.css";
 import Link from "next/link";
 import { manrope } from "@/helpers/fonts";
 import { caseStudyPath } from "@/helpers/variables";
+import Arrow from "@public/arrow-right.svg";
+import Image from "next/image";
+import Tag from "../tag";
 
 export default function CaseStudy(props: Omit<Post, "body" | "id">) {
   return (
@@ -11,9 +14,7 @@ export default function CaseStudy(props: Omit<Post, "body" | "id">) {
         <div className={styles.content}>
           <ul>
             {props.tags.map((tag) => (
-              <li key={tag} className={manrope.className}>
-                {tag}
-              </li>
+              <Tag label={tag} key={tag} />
             ))}
           </ul>
           <h3>{props.title}</h3>
@@ -21,7 +22,7 @@ export default function CaseStudy(props: Omit<Post, "body" | "id">) {
         </div>
         <div className={styles.arrow}>
           <span>Read case study</span>
-          {/* <img src="{arrow}" /> */}
+          <Image src={Arrow} alt="arrow" width={24} height={24} />
         </div>
       </Link>
     </div>

@@ -1,8 +1,7 @@
 import { fetchEntries } from "@/helpers/fetchEntries";
-import styles from "./page.module.css";
+import styles from "./case-study.module.css";
 import "./prism-holi-theme.css";
 import Link from "next/link";
-import { caseStudyPath } from "@/helpers/variables";
 import { unified } from "unified";
 import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
@@ -10,6 +9,10 @@ import rehypeFigure from "rehype-figure";
 import rehypePrism from "rehype-prism-plus";
 import rehypeReact from "rehype-react";
 import React from "react";
+import Image from "next/image";
+import ArticleBody from "@/components/article/article";
+import CaseStudy from "@/components/caseStudy";
+import Tag from "@/components/tag";
 
 export async function generateStaticParams() {
   const entries = await fetchEntries();
@@ -24,6 +27,17 @@ async function getData() {
   return caseStudies;
 }
 
+const ImgLink = (props: any) => {
+  const { src, alt } = props;
+  const imageLink = `https:${src}`;
+
+  return (
+    <Link href={imageLink}>
+      <Image {...props} fill src={imageLink} alt={alt} />
+    </Link>
+  );
+};
+
 export default async function Post({ params }: { params: { slug: string } }) {
   const caseStudies = await getData();
   const entry = caseStudies.find((post) => post.fields.slug === params.slug);
@@ -33,11 +47,12 @@ export default async function Post({ params }: { params: { slug: string } }) {
     .use(remarkRehype, { allowDangerousHtml: true })
     .use(rehypeFigure) // Turn markdown syntax tree to HTML syntax tree, ignoring embedded HTML
     .use(rehypePrism, { defaultLanguage: "ts" })
-    //  .use(rehypeRaw) // *Parse* the raw HTML strings embedded in the tree
     .use(rehypeReact, {
       createElement: React.createElement,
+      components: {
+        img: ImgLink,
+      },
     })
-    //.use(rehypeStringify) // Serialize HTML syntax tree
     .process(post.body)
     .then((file) => file.result)
     .catch((error) => {
@@ -48,9 +63,15 @@ export default async function Post({ params }: { params: { slug: string } }) {
     <main className={styles.main}>
       <article>
         <h1>{post.title}</h1>
+        <ul className={styles.tags}>
+          {post.tags.map((tag) => (
+            <Tag label={tag} key={tag} />
+          ))}
+        </ul>
         <p className={styles.description}>{post.description}</p>
         <hr />
-        {body}
+        <ArticleBody body={body} />
+        <hr />
       </article>
       <section>
         <h2>More case studies</h2>
@@ -58,12 +79,15 @@ export default async function Post({ params }: { params: { slug: string } }) {
           const { fields } = caseStudy;
           if (fields.slug !== post.slug)
             return (
-              <div className={styles.relatedCase} key={fields.slug}>
-                <Link href={`/${caseStudyPath}/${fields.slug}`}>
-                  <h3>{fields.title}</h3>
-                  <p>{fields.description}</p>
-                  <p>Read More</p>
-                </Link>
+              <div className={styles.casesGrid}>
+                <CaseStudy
+                  color={fields.color}
+                  description={fields.description}
+                  slug={fields.slug}
+                  tags={fields.tags}
+                  title={fields.title}
+                  key={fields.slug}
+                />
               </div>
             );
         })}

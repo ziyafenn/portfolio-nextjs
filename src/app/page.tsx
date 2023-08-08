@@ -1,6 +1,6 @@
 import styles from "./page.module.css";
 import { manrope, playfair } from "@/helpers/fonts";
-import CaseStudy from "@/components/caseStudy/CaseStudy";
+import CaseStudy from "@/components/caseStudy";
 import { fetchEntries } from "@/helpers/fetchEntries";
 
 async function getData() {

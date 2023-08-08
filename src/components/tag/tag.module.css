@@ -1,0 +1,7 @@
+.tag {
+  font-size: 0.725rem;
+  background-color: var(--dark);
+  color: white;
+  padding: 0.25rem 0.5rem;
+  text-transform: uppercase;
+}
