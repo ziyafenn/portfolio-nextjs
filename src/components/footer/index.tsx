@@ -2,7 +2,6 @@ import Image from "next/image";
 import styles from "./footer.module.css";
 import github from "@public/github.svg";
 import linkedin from "@public/linkedin.svg";
-import instagram from "@public/instagram.svg";
 import Link from "next/link";
 
 export default function Footer() {
@@ -17,13 +16,6 @@ export default function Footer() {
             href="https://github.com/ziyafenn"
           >
             <Image src={github} width={24} height={24} alt="github" />
-          </Link>
-          <Link
-            target="_blank"
-            rel="noreferrer"
-            href="https://instagram.com/ziyafenn"
-          >
-            <Image src={instagram} width={24} height={24} alt="instagram" />
           </Link>
           <Link
             target="_blank"

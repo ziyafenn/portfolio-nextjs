@@ -1,6 +1,5 @@
 import { fetchEntries } from "@/helpers/fetchEntries";
 import styles from "./case-study.module.css";
-import "./prism-holi-theme.css";
 import Link from "next/link";
 import { unified } from "unified";
 import remarkParse from "remark-parse";

@@ -33,7 +33,7 @@
 }
 
 .bgTitle p {
-  font-size: clamp(7rem, 18vw, 22rem);
+  font-size: clamp(4rem, 18vw, 22rem);
   font-weight: 800;
   letter-spacing: -2vw;
   color: transparent;
@@ -83,7 +83,11 @@
 
 @media screen and (max-width: 640px) {
   .bgTitle p {
-    line-height: 6rem;
+    line-height: unset;
+  }
+
+  .intro {
+    margin-top: 2;
   }
 
   .casesGrid {
