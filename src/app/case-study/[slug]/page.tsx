@@ -12,6 +12,7 @@ import Image from "next/image";
 import ArticleBody from "@/components/article/article";
 import CaseStudy from "@/components/caseStudy";
 import Tag from "@/components/tag";
+import { cookies } from "next/headers";
 
 export async function generateStaticParams() {
   const entries = await fetchEntries();
@@ -38,6 +39,8 @@ const ImgLink = (props: any) => {
 };
 
 export default async function Post({ params }: { params: { slug: string } }) {
+  const cookiesStore = cookies();
+  const login = cookiesStore.get(process.env.PASSWORD_COOKIE_NAME!);
   const caseStudies = await getData();
   const entry = caseStudies.find((post) => post.fields.slug === params.slug);
   const post = entry!.fields;
@@ -69,7 +72,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
         </ul>
         <p className={styles.description}>{post.description}</p>
         <hr />
-        <ArticleBody body={body} />
+        <ArticleBody body={body} slug={params.slug} login={!!login?.value} />
         <hr />
       </article>
       <section>
