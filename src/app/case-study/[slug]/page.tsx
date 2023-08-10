@@ -14,6 +14,7 @@ import CaseStudy from "@/components/caseStudy";
 import Tag from "@/components/tag";
 import { cookies } from "next/headers";
 import PageProtection from "@/components/pageProtection";
+import { playfair } from "@/helpers/fonts";
 
 export async function generateStaticParams() {
   const entries = await fetchEntries({ fetchAll: false });
@@ -70,7 +71,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
     return (
       <main className={styles.main}>
         <article>
-          <h1>{post.title}</h1>
+          <h1 className={playfair.className}>{post.title}</h1>
           <ul className={styles.tags}>
             {post.tags.map((tag) => (
               <Tag label={tag} key={tag} />
