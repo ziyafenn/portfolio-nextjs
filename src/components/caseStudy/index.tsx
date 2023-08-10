@@ -1,7 +1,6 @@
 import { Post } from "@/helpers/types";
 import styles from "./caseStudy.module.css";
 import Link from "next/link";
-import { manrope } from "@/helpers/fonts";
 import { caseStudyPath } from "@/helpers/variables";
 import Arrow from "@public/arrow-right.svg";
 import Image from "next/image";
