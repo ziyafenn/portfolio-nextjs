@@ -4,7 +4,7 @@ import CaseStudy from "@/components/caseStudy";
 import { fetchEntries } from "@/helpers/fetchEntries";
 
 async function getData() {
-  const entries = await fetchEntries();
+  const entries = await fetchEntries({ fetchAll: false });
   const caseStudiesUnsorted = entries.items;
   const caseStudies = caseStudiesUnsorted.sort(
     (b, a) => a.fields.id - b.fields.id
@@ -19,7 +19,7 @@ export default async function Home() {
   return (
     <>
       <div className={`${styles.bgTitle} ${manrope.className} `}>
-        <p>Design & Code</p>
+        <p>Design&Code</p>
       </div>
 
       <main>
