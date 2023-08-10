@@ -7,7 +7,7 @@
 
 .bgTitle {
   margin-top: -2rem;
-  margin-left: -1rem;
+  margin-left: -1.25rem;
   z-index: 0;
 
   background: conic-gradient(
@@ -33,7 +33,7 @@
 }
 
 .bgTitle p {
-  font-size: clamp(4rem, 18vw, 22rem);
+  font-size: clamp(4rem, 18.5vw, 22rem);
   font-weight: 800;
   letter-spacing: -2vw;
   color: transparent;
