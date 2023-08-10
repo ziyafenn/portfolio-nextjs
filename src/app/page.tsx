@@ -26,22 +26,21 @@ export default async function Home() {
         <div className={styles.intro}>
           <div className={styles.bio}>
             <p className={`${styles.header} ${playfair.className}`}>
-              Multidisciplinary Product Designer and UX Engineer with ~8 years
-              of experience in digital design.
+              Multidisciplinary UX Engineer with ~10 years of experience in
+              front-end development and digital design.
               <br />
               Based in Nuremberg, Germany.
             </p>
 
             <div className={styles.additionalInfo}>
               <p className={styles.subtitle}>
-                Specialise in DesignOps, design strategy, UI/UX, data-based
-                initiatives, design systems and front-end development.
+                Specialise in front-end development, design systems, DesignOps,
+                UI/UX and data-based initiatives.
               </p>
 
               <p className={styles.subtitle}>
-                I write JavaScript (TypeScript) and Dart. I build SPA/SSR &
-                Jamstack (React, Svelte, Vanilla JS/HTML/CSS), Node and
-                cross-platform (React Native, Flutter) apps for mobile and web.
+                I write TypeScript and Dart. I build SPA/SSR & Jamstack, Node
+                and cross-platform apps for mobile and web.
               </p>
 
               <p className={styles.subtitle}>
@@ -68,8 +67,8 @@ export default async function Home() {
                     />
                   </video>
                 </b>
-                engineering UI solutions and improving user experience for one
-                of the most robust robotic automation tools.
+                working on UI solutions and improving user experience for
+                managing the robust multi-purpose robotic arm.
               </p>
             </div>
           </div>

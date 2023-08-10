@@ -5,8 +5,7 @@ import Footer from "@/components/footer";
 import Header from "@/components/header";
 
 export const metadata: Metadata = {
-  title: "Ziya Fenn - UX Engineer",
-  description: "",
+  title: "Ziya Fenn - UX Engineer in Nuremberg, Germany",
 };
 
 export default function RootLayout({

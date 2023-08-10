@@ -44,8 +44,8 @@ export default function PageProtection() {
         <div className={styles.content}>
           <h3>Password required</h3>
           <p>
-            Due to NDA, i'm not able to publicly display my work. If you want to
-            read my case studies, please enter the provided password.
+            Due to NDA, i&apos;m not able to publicly display my work. If you
+            want to read my case studies, please enter the provided password.
           </p>
           <form onSubmit={(e) => onSubmit(e)}>
             <label>Password</label>

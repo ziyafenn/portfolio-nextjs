@@ -7,7 +7,11 @@ export default function Header() {
       <Link href={"/"} className={styles.logo}>
         Ziya Fenn
       </Link>
-      <Link target="_blank" href="mailto:hello@ziyafenn.com">
+      <Link
+        className={styles.email}
+        target="_blank"
+        href="mailto:hello@ziyafenn.com"
+      >
         hello@ziyafenn.com
       </Link>
     </header>

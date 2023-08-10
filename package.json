@@ -1,6 +1,9 @@
 {
   "name": "ziyafenn-next",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "author": "Ziya Fenn",
+  "homepage": "https://ziyafenn.com",
+  "description": "Personal website and portfolio",
   "private": true,
   "scripts": {
     "dev": "NODE_OPTIONS='--inspect' next dev",

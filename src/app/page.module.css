@@ -1,7 +1,7 @@
 .intro {
   flex-direction: column;
   position: relative;
-  margin-top: -6rem;
+  margin-top: clamp(-8rem, 50%, -6rem);
   z-index: 10;
 }
 
@@ -33,7 +33,7 @@
 }
 
 .bgTitle p {
-  font-size: clamp(4rem, 18.5vw, 22rem);
+  font-size: clamp(3.5rem, 18.5vw, 22rem);
   font-weight: 800;
   letter-spacing: -2vw;
   color: transparent;
@@ -82,12 +82,16 @@
 }
 
 @media screen and (max-width: 640px) {
+  .bgTitle {
+    margin-top: 0;
+    margin-left: -0.5rem;
+  }
   .bgTitle p {
     line-height: unset;
   }
 
   .intro {
-    margin-top: 2;
+    margin-top: -2rem;
   }
 
   .casesGrid {
