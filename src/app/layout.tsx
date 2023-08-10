@@ -6,6 +6,8 @@ import Header from "@/components/header";
 
 export const metadata: Metadata = {
   title: "Ziya Fenn - UX Engineer in Nuremberg, Germany",
+  description:
+    "Multidisciplinary UX Engineer with ~10 years of experience in front-end development and digital design.",
 };
 
 export default function RootLayout({
