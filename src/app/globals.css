@@ -39,13 +39,6 @@ a:hover {
   color: white;
 }
 
-/* Main container styles */
-
-main {
-  max-width: 1600px;
-  padding: 0 6rem 2rem 6rem;
-}
-
 @media screen and (max-width: 640px) {
   main {
     padding: 2rem;

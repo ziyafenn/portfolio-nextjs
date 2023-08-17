@@ -22,7 +22,7 @@ export default async function Home() {
         <p>Design&Code</p>
       </div>
 
-      <main>
+      <main className={styles.main}>
         <div className={styles.intro}>
           <div className={styles.bio}>
             <p className={`${styles.header} ${playfair.className}`}>

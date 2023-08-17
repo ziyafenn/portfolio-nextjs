@@ -9,7 +9,7 @@
   margin-top: -2rem;
   margin-left: -1.25rem;
   z-index: 0;
-
+  overflow: hidden;
   background: conic-gradient(
     from -90deg at 50% -25%,
     rgba(0, 0, 255, 0.5),
@@ -30,6 +30,11 @@
   100% {
     background-position: 0% 50%;
   }
+}
+
+.main {
+  max-width: 1600px;
+  padding: 0 6rem 2rem 6rem;
 }
 
 .bgTitle p {
