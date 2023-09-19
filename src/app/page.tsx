@@ -2,6 +2,7 @@ import styles from "./page.module.css";
 import { manrope, playfair } from "@/helpers/fonts";
 import CaseStudy from "@/components/caseStudy";
 import { fetchEntries } from "@/helpers/fetchEntries";
+import fetchGithubRepos from "@/helpers/fetchGithubRepos";
 
 async function getData() {
   const entries = await fetchEntries({ fetchAll: false });
@@ -9,12 +10,12 @@ async function getData() {
   const caseStudies = caseStudiesUnsorted.sort(
     (b, a) => a.fields.id - b.fields.id
   );
-
-  return caseStudies;
+  const githubData = await fetchGithubRepos();
+  return { caseStudies, githubData };
 }
 
 export default async function Home() {
-  const data = await getData();
+  const { caseStudies, githubData } = await getData();
 
   return (
     <>
@@ -74,10 +75,10 @@ export default async function Home() {
           </div>
         </div>
 
-        <div className={styles.caseStudies}>
+        <div className={styles.container}>
           <h2>Case Studies</h2>
           <div className={styles.casesGrid}>
-            {data.map((item) => (
+            {caseStudies.map((item) => (
               <CaseStudy
                 title={item.fields.title}
                 description={item.fields.description}
@@ -86,6 +87,22 @@ export default async function Home() {
                 key={item.fields.id}
                 slug={item.fields.slug}
               />
+            ))}
+          </div>
+        </div>
+        <div className={styles.container}>
+          <h2>Latest Github activity</h2>
+          <div className={styles.repos}>
+            {githubData.map((item) => (
+              <div key={item.id}>
+                <a href={item.html_url} target="_blank">
+                  <div className={styles.nameDesc}>
+                    <div className={styles.name}>{item.name}</div>
+                    <p>{item.description}</p>
+                  </div>
+                  <div className={styles.language}>{item.language}</div>
+                </a>
+              </div>
             ))}
           </div>
         </div>

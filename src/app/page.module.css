@@ -34,7 +34,7 @@
 
 .main {
   max-width: 1600px;
-  padding: 0 6rem 2rem 6rem;
+  padding: 0 6rem;
 }
 
 .bgTitle p {
@@ -73,10 +73,14 @@
   font-weight: normal;
 }
 
-.caseStudies {
-  margin-top: 1rem;
+.container {
   flex-direction: column;
   max-width: 64rem;
+  margin-bottom: 2rem;
+}
+
+.container h2 {
+  margin: 1rem 0 1rem 0;
 }
 
 .casesGrid {
@@ -144,4 +148,56 @@
 /* Show the tooltip text when you mouse over the tooltip container */
 .tooltip:hover .tooltiptext {
   visibility: visible;
+}
+
+.repos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-auto-rows: min-content;
+  grid-gap: 10px; /* Adjust the gap as needed */
+}
+
+.repos > div {
+  border: 1px var(--purple) solid;
+  border-radius: 3px;
+  padding: 0.75rem;
+}
+
+.repos a {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  text-decoration: none;
+}
+
+.repos > div:hover {
+  background-color: white;
+  color: black;
+}
+
+.repos :hover {
+  color: black;
+}
+
+.repos p {
+  padding: 0.5rem 0 1rem 0;
+  font-size: 0.9rem;
+}
+
+.repos .name {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.repos .language {
+  font-size: 0.725rem;
+  background-color: var(--dark);
+  color: white;
+  padding: 0.25rem 0.5rem;
+}
+
+.repos .nameDesc {
+  display: flex;
+  flex-direction: column;
 }

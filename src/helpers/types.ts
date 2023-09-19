@@ -18,3 +18,14 @@ export interface Entries {
   total: number;
   items: Item[];
 }
+
+export interface Repo {
+  name: string;
+  html_url: string;
+  description: string;
+  updated_at: string;
+  pushed_at: string;
+  id: number;
+  language: string;
+  fork: boolean;
+}
