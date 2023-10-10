@@ -98,7 +98,7 @@ export default async function Home() {
                 href="https://medium.com/@ziyafenn/password-protect-page-in-nextjs-5820cd7078ae"
                 target="_blank"
               >
-                Password Protect page in NextJS{" "}
+                Password protect page in Next.js{" "}
               </a>
               <Image
                 src={external}
