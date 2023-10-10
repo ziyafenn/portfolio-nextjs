@@ -3,6 +3,8 @@ import { manrope, playfair } from "@/helpers/fonts";
 import CaseStudy from "@/components/caseStudy";
 import { fetchEntries } from "@/helpers/fetchEntries";
 import fetchGithubRepos from "@/helpers/fetchGithubRepos";
+import external from "@public/external.svg";
+import Image from "next/image";
 
 async function getData() {
   const entries = await fetchEntries({ fetchAll: false });
@@ -89,9 +91,27 @@ export default async function Home() {
               />
             ))}
           </div>
+          <div className={styles.newArticle}>
+            <p>
+              Latest article on Medium:{" "}
+              <a
+                href="https://medium.com/@ziyafenn/password-protect-page-in-nextjs-5820cd7078ae"
+                target="_blank"
+              >
+                Password Protect page in NextJS{" "}
+              </a>
+              <Image
+                src={external}
+                width={12}
+                height={12}
+                alt="external"
+                color="white"
+              />
+            </p>
+          </div>
         </div>
         <div className={styles.container}>
-          <h2>Latest Github activity</h2>
+          <h2>Github repos</h2>
           <div className={styles.repos}>
             {githubData.map((item) => (
               <div key={item.id}>

@@ -201,3 +201,15 @@
   display: flex;
   flex-direction: column;
 }
+
+.newArticle {
+  background-color: black;
+  margin-top: 2rem;
+  padding: 1rem;
+  color: white;
+}
+
+.newArticle a {
+  font-weight: bold;
+  margin-right: 0.25rem;
+}
