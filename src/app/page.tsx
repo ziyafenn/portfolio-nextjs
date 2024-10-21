@@ -51,27 +51,14 @@ export default async function Home() {
                 <b>
                   <a
                     className={styles.frankalink}
-                    href="https://franka.de/"
+                    href="https://www.reliant.ai/"
                     target="_blank"
                     rel="noreferrer"
                   >
-                    Franka Emika,{" "}
+                    Reliant AI,{" "}
                   </a>
-                  <video
-                    className={styles.frankavideo}
-                    width="312"
-                    autoPlay
-                    loop
-                    muted
-                  >
-                    <source
-                      src="https://franka.de/_nuxt/videos/Sequence_slow.05b9a0e.mp4"
-                      type="video/mp4"
-                    />
-                  </video>
                 </b>
-                working on UI solutions and improving user experience for
-                managing the robust multi-purpose robotic arm.
+                working on UI solutions that leverage generative AI to simplify data collection, organization, and inspection in the commercial biopharma sector.
               </p>
             </div>
           </div>
